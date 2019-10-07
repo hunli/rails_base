@@ -6,9 +6,9 @@ This is a script to create a docker-fied Rails project
 
 ```bash
 1. Checkout this repo to some location
-  i.e. Example Location: `~/`
+  i.e. Example Location: `cd ~ && git checkout https://github.com/hunli/rails_base.git`
 2. Run the `create_service.sh` script and pass in desired path of new Rails project
-  i.e. `~/create_service.sh foo`
+  i.e. `~/rails_base/create_service.sh foo`
 
 Result: A new Rails project will now be created at `~/foo`. There is a Makefile for
 to make life easier.

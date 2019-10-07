@@ -1,3 +1,6 @@
+bundle:
+	docker-compose run web bundle install
+
 enter:
 	docker-compose run web bash
 

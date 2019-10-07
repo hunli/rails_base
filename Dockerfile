@@ -1,11 +1,18 @@
 FROM ruby:2.6.5-buster
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client build-essential nodejs
 RUN mkdir /myapp
 WORKDIR /myapp
+
+RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
+RUN apt-get install -y nodejs
+
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 COPY . /myapp
+
+RUN npm install -g yarn
+RUN yarn install --check-files
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/

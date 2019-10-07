@@ -1,10 +1,10 @@
 enter:
 	docker-compose run web bash
 
-dbinit:
+dbinit: create migrate seed
+
+create:
 	docker-compose run web rake db:create
-	migrate
-	seed
 
 migrate:
 	docker-compose run web rake db:migrate

@@ -1,5 +1,5 @@
 FROM ruby:2.6.5-buster
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client build-essential nodejs
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client build-essential nodejs vim
 RUN mkdir /myapp
 WORKDIR /myapp
 
